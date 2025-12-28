@@ -1,9 +1,9 @@
 const express = require('express');
 require("dotenv").config();
+
 const { sendMessageToSlack } = require("./send-message-to-slack");
 
 const app = express();
-const port = 8000;
 
 // Route
 app.get("/", async (req, res) => {
@@ -30,7 +30,4 @@ app.get("/", async (req, res) => {
 
 });
 
-
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
-});
+module.exports = app;
